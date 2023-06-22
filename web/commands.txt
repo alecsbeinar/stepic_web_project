@@ -17,3 +17,6 @@ curl -I http://localhost:80/some.file
 
 gunicorn --bind='0.0.0.0:8080' hello:application
 gunicorn ask.wsgi
+
+
+mysql -u root -p - войти в mysql оболочку с поролем
