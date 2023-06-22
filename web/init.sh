@@ -9,10 +9,15 @@ sudo ln -s /usr/bin/python3.5 /usr/bin/python2.7
 sudo pip3 install gunicorn
 sudo pip3 install django==2.1
 
+source ./venv/bin/activate
+sudo python3 -m pip install mysqlclient
+sudo apt-get install python3-dev libmysqlclient-dev
+sudo pip3 install mysqlclient
+
 sudo /etc/init.d/mysql start
 mysql -uroot -e "create database stepic_web;"
 mysql -uroot -e "GRANT ALL PRIVILEGES ON stepic_web.* TO 'box'@'localhost' WITH GRANT OPTION;"
-source ./venv/bin/activate
+
 cd ask
 python3 manage.py makemigrations
 python3 manage.py migrate
